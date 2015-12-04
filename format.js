@@ -2,7 +2,7 @@ angular.module('deft.format', [])
   .directive('deftFormat', function () {
     function executeFormat(format, input) {
       format = ' ' + format; // Add so the [^\\] will find the first one if there is nothing before the quantifier
-      // @todo escaped slashed should be taken into consideration
+      // @todo escaped slashes should be taken into consideration
       var regex = new RegExp(/[^\\]([\d*]+)([SD])/); // Regex to find quantifier and command as %1 and %2
       var matches = regex.exec(format); // If a match is found, %1 and %2 will be available as well
       var index = format.search(regex) + 1; // +1 because of the [^\\] which we do want in our output
@@ -25,7 +25,7 @@ angular.module('deft.format', [])
     }
 
     function removeEscapeSlashes(output) {
-      // @todo escaped slashed should be taken into consideration
+      // @todo escaped slashes should be taken into consideration
       return output.replace(/\\/g, '');
     }
 

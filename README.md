@@ -1,6 +1,6 @@
 # Deft-Angular-Format
 
-Deft-Angular-Arrow is a small [angular](http://angularjs.org) module that allows you to easily format your input e.g. zipCode in a general way
+Deft-Angular-Format is a small [angular](http://angularjs.org) module that allows you to easily format your input e.g. zipCode in a general way
 
 ## Installing Deft-Angular-Format
 
