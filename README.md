@@ -6,12 +6,12 @@ Deft-Angular-Format is a small [angular](http://angularjs.org) module that allow
 
 - Clone the repo: `git clone https://github.com/deft/deft-angular-format.git`
 ```
-<script src="/path/to/your/scripts/here/format.js"></script>
+<script src="/path/to/your/scripts/here/dist/deft-format.min.js"></script>
 ```
 
 - Install with Bower: `bower install deft-angular-format`
 ```
-<script src="/bower_components/deft-angular-format/format.js"></script>
+<script src="/bower_components/deft-angular-format/dist/deft-format.min.js"></script>
 ```
 
 
