@@ -14,7 +14,9 @@ angular.module('deft.format', [])
           return formatter.format(inputValue);
         });
         element.blur(function() {
-          element.val(formatter.format(element.val()));
+          var output = formatter.format(element.val());
+          element.val(output);
+          ngModel.$setViewValue(output);
         });
       }
     };
