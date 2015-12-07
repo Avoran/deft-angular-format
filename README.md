@@ -1,4 +1,4 @@
-# Deft-Angular-Format
+# Deft-Angular-Format [![Build Status](https://travis-ci.org/deft/deft-angular-format.svg)](https://travis-ci.org/deft/deft-angular-format)[![codecov.io](https://codecov.io/github/deft/deft-angular-format/coverage.svg?branch=master)](https://codecov.io/github/deft/deft-angular-format?branch=master)
 
 Deft-Angular-Format is a small [angular](http://angularjs.org) module that allows you to easily format your input e.g. zipCode in a general way
 
@@ -13,7 +13,6 @@ Deft-Angular-Format is a small [angular](http://angularjs.org) module that allow
 ```
 <script src="/bower_components/deft-angular-format/dist/deft-format.min.js"></script>
 ```
-
 
 ## Using Deft-Angular-Format
 

@@ -1,11 +1,11 @@
 {
   "name": "deft-angular-format",
-  "version": "1.0.0",
+  "description": "A format directive",
   "authors": [
     "Pieter Verloop <pieter@deft.nl>"
   ],
-  "description": "A format directive",
-  "main": "format.js",
+  "version": "1.0.0",
+  "main": "dist/deft-format.min.js",
   "keywords": [
     "format",
     "angularjs",
@@ -16,10 +16,6 @@
   "homepage": "https://github.com/deft/deft-angular-format",
   "dependencies": {
     "angular": "angularjs#~1.4.8",
-    "jquery": "~2.1.4",
     "lodash": "~3.10.1"
-  },
-  "devDependencies": {
-    "qunit": "~1.20.0"
   }
 }

@@ -2,7 +2,7 @@ if (typeof module !== 'undefined' && module.exports) {
   var QUnit = require('qunitjs');
   var test = QUnit.test;
   require('qunit-tap')(QUnit, console.log);
-  var Formatter = require('../src/formatter.js');
+  var Formatter = require('../dist/formatter.min.js');
 }
 
 test('Simple digit format', function(assert) {
