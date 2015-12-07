@@ -2,7 +2,7 @@
   "name": "deft-angular-format",
   "description": "A format directive",
   "author": "Pieter Verloop <pieter@deft.nl>",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
     "test": "node_modules/.bin/istanbul cover tests/test.js  && cat coverage/coverage.json | node_modules/.bin/codecov"
   },
