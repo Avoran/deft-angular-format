@@ -2,7 +2,7 @@
   "name": "js-text-formatter",
   "description": "A javascript text formatter",
   "author": "Pieter Verloop <p.verloop@plein.nl>",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "scripts": {
     "test": "node_modules/.bin/istanbul cover tests/test.js  && cat coverage/coverage.json | node_modules/.bin/codecov"
   },
