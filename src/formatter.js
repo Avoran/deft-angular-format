@@ -1,23 +1,28 @@
+/*
+ * formatter.js - v1.1.0
+ * https://github.com/Avoran/js-text-formatter
+ */
+
 /* istanbul ignore next */
 if (typeof module !== 'undefined' && module.exports) {
   var _ = require('lodash');
   module.exports = Formatter;
 }
 
-function Formatter (format) {
+function Formatter (options) {
 
   this.format = function(input) {
-    return _format(input, format);
+    return _format(input, _.defaults(options, {format: '', debug: false}));
   };
 
-  var _format = function(input, currentFormat) {
-    currentFormat = ' ' + currentFormat; // Add so the [^\\] will find the first one if there is nothing before the quantifier
+  var _format = function(input, options) {
+    var format = ' ' + options.format; // Add so the [^\\] will find the first one if there is nothing before the quantifier
     // @todo escaped slashes should be taken into consideration
     var regex = new RegExp(/[^\\]([\d*]+)([SD])/); // Regex to find quantifier and command as %1 and %2
-    var matches = regex.exec(currentFormat); // If a match is found, %1 and %2 will be available as well
-    var index = currentFormat.search(regex) + 1; // +1 because of the [^\\] which we do want in our output
+    var matches = regex.exec(format); // If a match is found, %1 and %2 will be available as well
+    var index = format.search(regex) + 1; // +1 because of the [^\\] which we do want in our output
 
-    var output = index ? currentFormat.substring(1, index) : currentFormat.substring(1); // We don't want the first space we added ourselves
+    var output = index ? format.substring(1, index) : format.substring(1); // We don't want the first space we added ourselves
     output = removeEscapeSlashes(output); // These slashes are there to escape, not to show
     input = trimExtraContentFromInput(input, output); // Remove content once that is added from both format and input
 
@@ -28,12 +33,20 @@ function Formatter (format) {
       if (io.done) {
         output += _format( // Recursively handle the whole format until everything is handled
           io.remainingInput, // Get the unhandled input data
-          currentFormat.substring(index -1).replace(matches[0], '') // Removes the handled data from te format
+            _.defaults({format: format.substring(index -1).replace(matches[0], '')}, options) // Removes the handled data from te format
         );
       }
     }
 
-    //console.log('---------');console.log('input: ' + input);console.log('output: ' + output);console.log('format: ' + currentFormat); // For debug purposes only
+    /* istanbul ignore next */
+    if (options.debug && console && console.log) {
+      console.log('---------- avFormatter ----------');
+      console.log('avFormatter - input: ' + input);
+      console.log('avFormatter - output: ' + output);
+      console.log('avFormatter - format: ' + format);
+      console.log('--------- /avFormatter ----------');
+    }
+
     return output;
   };
 
@@ -52,7 +65,7 @@ function Formatter (format) {
   };
 
   var escapeChar = function(char) {
-    if (_.contains(['\\', '-', ']'], char)) char = '\\' + char; // Within a character set, only these need to be escaped
+    if (_.includes(['\\', '-', ']'], char)) char = '\\' + char; // Within a character set, only these need to be escaped
 
     return '[' + char + ']'; // Return as a character set
   };

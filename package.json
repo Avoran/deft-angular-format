@@ -1,19 +1,23 @@
 {
-  "name": "deft-angular-format",
-  "description": "A format directive",
-  "author": "Pieter Verloop <pieter@deft.nl>",
-  "version": "1.0.2",
+  "name": "js-text-formatter",
+  "description": "A javascript text formatter",
+  "author": "Pieter Verloop <p.verloop@plein.nl>",
+  "version": "1.1.0",
   "scripts": {
     "test": "node_modules/.bin/istanbul cover tests/test.js  && cat coverage/coverage.json | node_modules/.bin/codecov"
   },
   "dependencies": {
-    "angular": "~1.4.8",
-    "lodash": "~3.10.1"
+    "lodash": "^3.10.1"
   },
   "devDependencies": {
-    "qunitjs": "~1.20.0",
-    "qunit-tap": "~1.5.0",
-    "istanbul": "~0.4.1",
-    "codecov.io": "~0.1.6"
+    "codecov.io": "^0.1.6",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^2.1.2",
+    "istanbul": "^0.4.1",
+    "qunit-tap": "^1.5.0",
+    "qunitjs": "^1.20.0"
   }
 }
