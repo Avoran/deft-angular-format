@@ -1,5 +1,5 @@
 /*
- * jquery-formatter.js - v1.1.1
+ * jquery-formatter.js - v1.1.2
  * https://github.com/Avoran/js-text-formatter
  */
 
@@ -29,6 +29,7 @@
 }(jQuery);
 
 $(function() {
-    var $elem = $('[av-format]');
-    $elem.avFormat({format: $elem.attr('av-format')});
+    $('[av-format]').each(function() {
+        $(this).avFormat({format: $(this).attr('av-format')});
+    });
 });

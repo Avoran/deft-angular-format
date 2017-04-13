@@ -1,5 +1,5 @@
 /*
- * angular-formatter.js - v1.1.1
+ * angular-formatter.js - v1.1.2
  * https://github.com/Avoran/js-text-formatter
  */
 angular.module('av.format', [])

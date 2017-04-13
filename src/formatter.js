@@ -1,5 +1,5 @@
 /*
- * formatter.js - v1.1.1
+ * formatter.js - v1.1.2
  * https://github.com/Avoran/js-text-formatter
  */
 
